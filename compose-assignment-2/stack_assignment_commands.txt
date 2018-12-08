@@ -1,0 +1,6 @@
+echo "password" | docker secret create psql_pw -
+
+docker stack deploy -c docker-compose_stack_assignment.yml
+
+
+
