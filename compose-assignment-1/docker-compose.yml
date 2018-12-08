@@ -1,12 +1,8 @@
-# create your drupal and postgres config here, based off the last assignment
 version: '2'
 
 services:
   cms:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: custom-drupal
+    image: drupal:8-apache
     ports: 
       - "8080:80"
     volumes:
@@ -19,12 +15,9 @@ services:
     environment: 
       POSTGRES_PASSWORD: password  
       POSTGRES_USER: postgres
-    volumes:
-      - drupal-data:/var/lib/postgresql/data
 
 volumes:
   drupal-modules:
   drupal-profiles:
   drupal-sites:
   drupal-themes:
-  drupal-data:
